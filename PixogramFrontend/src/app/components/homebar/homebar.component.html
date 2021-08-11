@@ -1,0 +1,80 @@
+<div class="home__header" style="background-color: #4267B2">
+<div class="home__header__left">
+    <img (click)="redirectToHome()" style="background-color: white;cursor: pointer; height: 50px; width: 50px;" mat-card-avatar src="assets/preview-removebg-preview.png"/>
+    <!-- <div class="input">
+      <form>
+        <input placeholder="Search Pixogram" type="text">
+      </form>
+    </div> -->
+    <br>
+    <div class="userHeader" style="cursor: pointer;" (click)="redirectToMyProfile()">
+      <img
+        alt="Profile icon"
+        mat-card-avatar [src]="profileImage"
+        >&nbsp;
+      <span class="name" style="
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;">{{username_string}}</span>
+    </div>
+
+  </div>
+  <div class="home__header__middle">
+    <div (click)="redirectToHome()" title="Home">
+      <span class="head_title">Home</span>
+    </div>
+    <div [matMenuTriggerFor]="media" title="Upload Media">
+      <span class="head_title">Upload Media</span>
+      <mat-menu #media="matMenu">
+        <button mat-menu-item (click)="addPhotos('0')">
+          Single Photo <mat-icon>photo</mat-icon>
+        </button>
+        <button mat-menu-item (click)="addPhotos('1')">
+          Multiple Photos <mat-icon>photo_library</mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+    <div (click)="redirectToMyProfile()" title="My Media">
+      <span class="head_title">My Media</span>
+    </div>
+    <div (click)="redirectToAllUsersPage()" title="All Users">
+      <span class="head_title">All Users</span>
+    </div>
+    <div (click)="redirectToFollowers()" title="Followers/Following">
+      <!-- <mat-icon>group</mat-icon> -->
+      <span class="head_title">Followers/Following</span>
+    </div>
+    <!-- <div (click)="redirectToSettings()" title="Settings">
+      <mat-icon>settings</mat-icon>
+    </div> -->
+
+  </div>
+  <div class="home__header__right">
+
+
+    <div class="accountDiv" [matMenuTriggerFor]="menu" style="margin-right: 50px;">
+
+      <!-- <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon> -->
+      <span class="head_title">Account </span><mat-icon style="font-size: 20px;">settings</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="redirectToSettings('0')">
+          NewsFeed	<mat-icon> notes</mat-icon>
+        </button>
+        <button mat-menu-item (click)="redirectToSettings('1')">
+          Blocked Accounts <mat-icon>block</mat-icon>
+        </button>
+        <button mat-menu-item (click)="redirectToSettings('2')">
+          Acount Update <mat-icon>update</mat-icon>
+        </button>
+        <button mat-menu-item (click)="redirectToSettings('3')">
+          Search <mat-icon>search</mat-icon>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <!-- <mat-icon>exit_to_app</mat-icon> Logout -->
+          Logout <i style="font-size: 20px;" class="fa fa-sign-out" aria-hidden="true"></i>
+        </button>
+      </mat-menu>
+    </div>
+
+  </div>
+
+</div>

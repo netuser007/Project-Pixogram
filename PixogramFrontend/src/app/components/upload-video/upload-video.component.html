@@ -1,0 +1,44 @@
+<!-- <div>
+    <input id="captionText" style="width: 100%;height: 50px;" size="100" class="on-your-mind" name="message" [(ngModel)]="caption" placeholder="Enter a caption!!" type="text">
+</div> -->
+<div style="background-color: #E8E8E8;">
+<div id="fixedbutton">
+    <button id="uploadButton" (click)="uploadAll()" name="upload">Upload All</button>
+    <button id="cancelButton" (click)="discardFiles()" name="cancel">Cancel All</button>
+    <button id="addButton" (click)="addComponent()" name="upload">Add Component</button>
+</div>
+<div *ngFor="let component of divisions">
+<div style="display: flex;">
+<div style="flex:1.5;">
+    <h3 id="heading">Enter The Details</h3>
+    <form #form>
+        <!-- <div class="user_name">
+          
+        </div> -->
+        <div>
+          <input class="button_field" type="text" [(ngModel)]="component.title" placeholder="Title" name="title">
+          <input class="button_field" type="text" [(ngModel)]="component.description" placeholder="Description" name="description">
+          <input class="button_field" type="text" [(ngModel)]="component.tags" placeholder="Tags" name="tags">
+        </div>
+      </form>
+</div>
+
+<!-- <div style="flex:0.5">
+    
+    
+</div> -->
+
+<div style="flex:1">
+    <h3 id="heading">Select The Photo</h3>
+    <app-file-browser (searchresult)="confirmFiles($event,component)" #fileBrowser></app-file-browser>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- <div class="showImages" *ngIf="url!=undefined">
+    <h3 style="margin-left: 12%;">Preview</h3>
+    <img height="30%" width="30%" alt="image" src={{url}}>
+</div> -->
+

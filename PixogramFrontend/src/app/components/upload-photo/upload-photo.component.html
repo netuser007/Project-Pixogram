@@ -1,0 +1,41 @@
+<!-- <div>
+    <input id="captionText" style="width: 100%;height: 50px;" size="100" class="on-your-mind" name="message" [(ngModel)]="caption" placeholder="Enter a caption!!" type="text">
+</div> -->
+<div id="fixedbutton">
+    <!-- <button id="uploadButton" (click)="uploadMedia()" name="upload">Upload</button>
+    <button id="cancelButton" (click)="discardFiles()" name="cancel">Cancel Upload</button> -->
+    <button id="uploadButton"  (click)="uploadMedia()" name="upload">Upload</button>
+    <button  id="cancelButton" (click)="discardFiles()" name="cancel">Cancel</button>
+</div>
+<div style="display: flex;">
+<div style="flex:1.5;">
+    <h3 id="heading">Enter The Details</h3>
+    <form>
+        <!-- <div class="user_name">
+          
+        </div> -->
+        <div>
+          <input class="button_field" type="text" [(ngModel)]="titleModel" placeholder="Title" name="title">
+          <input class="button_field" type="text" [(ngModel)]="descriptionModel" placeholder="Description" name="description">
+          <input class="button_field" type="text" [(ngModel)]="tagsModel" placeholder="Tags" name="tags">
+        </div>
+      </form>
+</div>
+
+<!-- <div style="flex:0.5">
+    
+    
+</div> -->
+
+<div style="flex:1">
+    <h3 id="heading">Select The Photo</h3>
+    <app-file-browser (searchresult)="confirmFiles($event)" #fileBrowser></app-file-browser>
+</div>
+
+</div>
+
+<div class="showImages" *ngIf="url!=undefined">
+    <h3 style="margin-left: 12%;">Preview</h3>
+    <img height="30%" width="30%" alt="image" src={{url}}>
+</div>
+

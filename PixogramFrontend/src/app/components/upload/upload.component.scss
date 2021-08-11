@@ -1,0 +1,24 @@
+@import "src/styles";
+
+.home-container {
+  position: relative;
+  background-color: $body-color;
+}
+
+/* HEADER SECTION */
+.home__body {
+  margin-top: 80px;
+  background-color: $body-color;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-between;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.formInput{
+    align-items: center;
+    width: 100%;
+}
+
+

@@ -1,0 +1,14 @@
+.example-viewport {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+  }
+  
+  .example-item {
+    height: 60px;
+  }
+
+  .scrollDiv {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

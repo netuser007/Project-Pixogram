@@ -1,0 +1,60 @@
+// .parent {
+//     margin-top: 100px;
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+  
+//   .child {
+//     flex: 1 0 21%; /* explanation below */
+//     margin: 5px;
+//     height: 500px;
+//   }
+
+.about{
+  margin-top: 100px;
+  margin-left: 10px;
+  width: 50%;
+}
+
+.row {
+    margin-top: 88px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  .column {
+    -ms-flex: 25%;
+    flex: 25%;
+    padding: 4px 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+
+  .font_style{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  .countStyle{
+
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 3px;
+    // margin-top: 10%;
+    background: #E8E8E8;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 13px Arial, sans-serif;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }

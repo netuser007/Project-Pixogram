@@ -1,0 +1,10 @@
+
+<form #demoForm="ngForm">
+    <!-- <file-upload style="height: 200px; width: 90%; margin-left: 20px;" (change)="checkFiles()" [(ngModel)]="uploadedFiles" [disabled]="isDisabled" name="files"></file-upload> -->
+    <file-upload style="height: 200px; width: 90%; margin-left: 20px;" [(ngModel)]="uploadedFiles" [fileslimit]="1" name="files" [control]="fileUploadControl"></file-upload>
+    <span style="color: deeppink;margin-left: 46%;">{{confirmSelection}}</span>
+    <br>
+    <button style="margin-left: 45%;border-radius: 20px;cursor: pointer; margin-top: 10px; height: 30px;width:150px;color:white;background-color: #4267B2;" (click)="confirm()">Confirm Selection</button>
+</form>`
+
+<!-- <img alt="image" src={{url}}> -->

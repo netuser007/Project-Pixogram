@@ -1,0 +1,19 @@
+
+<div class="home-container" style="background-color: #E8E8E8">
+    <app-homebar></app-homebar>
+  
+    <div class="home__body"  style="background-color: #E8E8E8">
+        <mat-tab-group class="tabGroup" mat-align-tabs="center" [selectedIndex]="selectedIndex">
+            <mat-tab class="tabElements" label="Single Photo">
+              <ng-template matTabContent>
+                <app-upload-photo></app-upload-photo>
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="Multiple Photos" style="background-color: #E8E8E8">
+              <ng-template matTabContent>
+                <app-upload-video></app-upload-video>
+              </ng-template>
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+</div>

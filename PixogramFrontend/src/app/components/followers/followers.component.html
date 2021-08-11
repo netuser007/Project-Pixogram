@@ -1,0 +1,58 @@
+<app-homebar></app-homebar>
+
+<div style="height:100%;background-color: #E8E8E8;">
+<mat-tab-group class="tabGroup" mat-align-tabs="center">
+    <mat-tab class="tabElements" style="font-family: 'Courier New', Courier, monospace;" label="Followers" >
+      <ng-template matTabContent>
+        <div style="overflow-x: hidden;">
+        <div class="row" style="margin-left: 1%; overflow-x: hidden;"> 
+            <div class="col-md-4" *ngFor="let i of accountFollowersArray">
+              <div style="width: 300px;">
+                <h5 style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;" class="followerTitle">{{i.username}}</h5>
+              <img alt="bg" height="250" width="300"
+                [src]="i.profileImage">
+                <br>
+                <br>
+                <span class="pull-left" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">Followers: {{i.followers}}</span>
+                <span class="pull-right" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">Following: {{i.following}}</span>
+                <br>
+                <br>
+                <!-- <button *ngIf="!checkButton(i)" (click)="followUser(i)" class="followButton">Follow</button>
+                <button *ngIf="checkButton(i)" (click)="unFollowUser(i)" class="followButton">UnFollow</button>
+                <button class="blockButton" (click)="blockUser(i)">Block</button> -->
+                <button *ngIf="!checkButton(i)" (click)="followUser(i)" class="followButton pull-left">Follow</button>
+                <button *ngIf="checkButton(i)" style="background-color: rgb(231, 169, 53);" (click)="unFollowUser(i)" class="followButton pull-left">UnFollow</button>
+                <button class="followButton pull-right" style="background-color: rgb(243, 75, 75);" (click)="blockUser(i)">Block</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Following">
+      <ng-template matTabContent>
+        <div style="overflow-x:hidden;">
+        <div class="row" style="margin-left: 1%; overflow-x: hidden;"> 
+            <div class="col-md-4" *ngFor="let i of accountFollowingArray">
+              <div style="width: 300px;">
+              <h5 class="followerTitle" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">{{ i.username }}</h5>
+              <img alt="bg" height="250" width="300"
+              [src]="i.profileImage">
+              <br>
+              <br>
+              <span class="pull-left" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">Followers: {{i.followers}}</span>
+              <span class="pull-right" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">Following: {{i.following}}</span>
+              <br>
+              <br>
+                <!-- <button class="followButton" (click)="unFollowUser(i)">UnFollow</button>
+                <button class="blockButton" (click)="blockUser(i)">Block</button> -->
+                <button class="followButton pull-left" style="background-color: rgb(231, 169, 53);" (click)="unFollowUser(i)">UnFollow</button>
+                <button class="followButton pull-right" style="background-color: rgb(243, 75, 75);" (click)="blockUser(i)">Block</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </ng-template>
+    </mat-tab>
+</mat-tab-group>
+</div>

@@ -1,0 +1,36 @@
+<div style="background-color: #E8E8E8; overflow-x: hidden;">
+<app-homebar></app-homebar>
+  <div class="row" style="background-color: #E8E8E8;margin-left: 1%;"> 
+    <div class="column">
+      <h3 style="width:100%">About&nbsp; <mat-icon>info</mat-icon></h3>
+      <h1>{{aboutUser}}</h1>
+    </div>
+    <div class="column">
+      <h3 style="width:100%">Status&nbsp; <mat-icon>library_books</mat-icon></h3>
+      <h1>{{statusUser}}</h1>
+    </div>
+    <div class="column">
+      <h3 style="width:100%">Followers&nbsp; <span class="countStyle"><span>{{noOfFollowers}}</span></span></h3>
+    </div>
+    <div class="column">
+      <h3 style="width:100%">Following&nbsp; <span class="countStyle">{{noOfFollowing}}</span></h3>
+    </div>
+  </div>
+<div class="row" style="background-color: #E8E8E8;margin-left: 1%;overflow-x: hidden;"> 
+    <div class="col-md-4" *ngFor="let post of postsList">
+      <div style=" border: 1px solid lightgray;">
+      <h5 class="font_style" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">{{post.singleMediaEntity.title}}</h5>
+      <img style="cursor:pointer;" (click)="getImageData(post)" alt="bg" height="250" width="420"
+        [src]="post.singleMediaEntity.postImage">
+        <h5 class="font_style" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif">{{post.singleMediaEntity.description}}</h5>
+        <h5 class="font_style" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px;">{{post.singleMediaEntity.tags}}</h5>
+        <i class="fa fa-heart" style="color:red; font-size: 25px;" aria-hidden="true"></i> &nbsp;{{post.likesList.length}}
+        <!-- <i class="fa fa-heart" style="color:black; font-size: 25px;transform: rotate(180deg);" aria-hidden="true"></i><br> -->
+        <mat-icon style="margin-left: 5%;"> comment</mat-icon>&nbsp;{{post.commentsList.length}}<br>
+        <br>
+        <br>
+      </div>
+      <br>
+    </div>
+</div>
+</div>

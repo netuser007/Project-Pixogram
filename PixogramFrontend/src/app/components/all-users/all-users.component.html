@@ -1,0 +1,26 @@
+<app-homebar></app-homebar>
+<div style="height:100%; overflow-x: hidden; background-color:#E8E8E8;">
+<div class="row" style="margin-left: 1%;"> 
+    <div class="col-md-4" *ngFor="let i of usersList">
+      <div style="width: 300px;">
+      <h4 style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;" class="panel-title">{{ i.username }}</h4>
+      <img alt="bg" height="250" width="300"
+        [src]="i.profileImage">
+        <br>
+        <br>
+        <span class="pull-left" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;" >Followers: {{i.followers}}</span>
+        <span class="pull-right" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;" >Following: {{i.following}}</span>
+        <br>
+        <br>
+        <div>
+         
+        <button class="followButton" *ngIf="!checkBlock(i) && !checkButton(i)" (click)="followUser(i)">Follow</button>
+        <button class="followButton" style="background-color: rgb(231, 169, 53);" *ngIf="!checkBlock(i) && checkButton(i)" (click)="unFollowUser(i)">UnFollow</button>
+        <button class="followButton" style="background-color: rgb(50, 184, 50);" *ngIf="checkBlock(i)" (click)="unBlockUser(i)">UnBlock</button>
+    </div>
+        
+    </div>
+    </div>
+</div>
+</div>
+     

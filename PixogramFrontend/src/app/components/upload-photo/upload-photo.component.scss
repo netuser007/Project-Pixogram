@@ -1,0 +1,62 @@
+@import "src/styles";
+// #fixedbutton {
+//     position: fixed;
+//     bottom: 0px;
+//     right: 0px; 
+//     margin-bottom: 10px;
+//     margin-right: 10px;
+// }
+
+#uploadButton{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    color:white;
+    background-color: #4267B2;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-left: 40%;
+}
+
+#heading{
+    margin-left: 37%;
+    margin-top: 10px;
+}
+
+.button_field{
+    margin-left:10%; 
+    margin-top: 10px; 
+    width: 80%;
+    height: 50px;
+    outline: none;
+  }
+
+  input {
+    flex: 1;
+    outline:none;
+    border:1px solid lightgray;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #F5F6F7;
+  }
+
+  .showImages{
+    background-color: $body-color;
+    margin-left: 43%;
+  }
+
+  #cancelButton{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    color:white;
+    background-color: #4267B2;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+
+  .my-panel .mat-dialog-container {
+   background-color: beige;
+}
+

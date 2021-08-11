@@ -1,0 +1,71 @@
+<div class="register" style="height: 100vh; overflow-y: hidden;">
+  <div class="header" style="align-self: center; margin-left: 2%;margin-top: 1%;">
+    <h3 class="text-center" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 30px; 
+    color:rgb(82, 79, 79);
+    font-weight: 500;">Sign Up</h3>
+    <p class="text-center" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 16px; 
+    color:rgb(82, 79, 79);
+    font-weight: 500;">It's quick and easy</p>
+  </div>
+
+  <div style="margin-left: 45%;">
+    <h3 style="color: #00A400;">{{showMessage}}</h3>
+  </div>
+
+  <div class="body">
+    <form #form="ngForm">
+      <div class="user_name" style="margin-top: 10px;">
+        <span>First Name:</span>
+        <input type="text" name="fname" ngModel>
+      </div>
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>Last Name:</span>
+        <input type="text" name="lname" ngModel>
+      </div>
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>Username:</span>
+        <input type="text" name="username" ngModel>
+      </div>
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>E-Mail:</span>
+        <input type="text" name="email" ngModel>
+      </div>
+
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>Date Of Birth:</span>
+        <input type="date" placeholder="Date" name="date" ngModel>
+      </div>
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>Password:</span>
+        <input type="password" name="password" ngModel>
+      </div>
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>Confirm Password:</span>
+        <input type="text" name="confirmPassword" ngModel>
+      </div>
+      <div class="user_name" style="margin-top: 10px;">
+        
+        <span>Profile Pic:</span>
+        <input type="file" (change)="onFileChanged($event.target.files)" placeholder="Profile Image" name="profilePic">
+      </div>
+      
+
+      <p class="text-center" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-size: 14px; 
+      color:rgb(82, 79, 79);
+      font-weight: 300;">By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+      <div style="display: flex;margin-left: 20%;">
+      <button type="submit" style="flex: 0.4; background-color: #4267B2;" class="submit-button" (click)="goToLogin()">Go Back To Login</button>
+      <button type="submit" style="flex: 0.4;margin-left: 2%; background-color: #4267B2;"  class="submit-button" (click)="register(form.value)">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>

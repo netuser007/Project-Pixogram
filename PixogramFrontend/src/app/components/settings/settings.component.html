@@ -1,0 +1,75 @@
+<div style="background-color:#E8E8E8 ; height: 100%;">
+<app-homebar></app-homebar>
+<div style="height: 100%;">
+<mat-tab-group class="tabGroup" mat-align-tabs="center" style="margin-top: 6%;" [selectedIndex]="selectedIndex">
+    <mat-tab class="tabElements" label="Newsfeed">
+      <ng-template matTabContent>
+        <div class="newsFeed">
+        <div *ngFor="let i of newsFeedArray">
+            <span class="followerTitle">{{ i.timeStamp }}</span>&nbsp;
+            <span class="followerTitle">{{ i.description }}</span>
+        </div>
+    </div>
+       </ng-template>
+    </mat-tab>
+    <mat-tab label="Blocked Accounts">
+      <ng-template matTabContent>
+        <div style="overflow-x: hidden; height: 100%;">
+        <div class="row" > 
+            <div class="col-md-4" *ngFor="let i of blockedUsersArray">
+                <div style="width: 300px;">
+                <h5 class="followerTitle" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">{{ i.username }}</h5>
+              <img alt="bg" height="250" width="300"
+                [src]="i.profileImage"><br>
+                <br>
+                <button class="blockButton pull-left" (click)="unBlockUser(i)">Unblock</button>
+              </div>
+            </div>
+        </div>
+      </div>
+              
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Account Update">
+        <ng-template matTabContent>
+            <div class="body">
+                <form #form="ngForm">
+                  <!-- <div class="user_name">
+                    
+                  </div> -->
+                  <div class="email_password">
+                    <input class="button_field" type="text" placeholder="FirstName" name="fname" ngModel>
+                    <input class="button_field" type="text" placeholder="LastName" name="lname" ngModel>
+                    <input class="button_field" type="text" placeholder="Email" name="email" ngModel>
+                    <input class="button_field" type="password" placeholder="Password" name="password" ngModel>
+                  </div>
+                  <br>
+                  <button style="margin-top: 10px;" type="submit" class="submit-button" (click)="updateAccountDetails(form.value)">Update Account</button>
+                </form>
+                <form #form1="ngForm">
+                  <!-- <div class="user_name">
+                    
+                  </div> -->
+                  <div class="email_password">
+                    <input class="button_field" type="text" placeholder="About" name="about" ngModel>
+                    <input class="button_field" type="text" placeholder="Status" name="status" ngModel>
+                  </div>
+                  <br>
+                  <button style="margin-top: 10px;" type="submit" class="submit-button" (click)="updateStatus(form1.value)">Update Status</button>
+                </form>
+              </div>
+        </ng-template>
+    </mat-tab>
+    <mat-tab class="tabElements" label="Search">
+      <ng-template matTabContent>
+        <div>
+          <input style="margin-left:10%; margin-top: 10px; width: 80%; height: 50px; outline: none;" class="button_field_search" size="100" class="on-your-mind" name="message" (keyup)="doGlobalSearch($event)" [(ngModel)]="searchInput" placeholder="Search Media, Tags And Users" type="text">
+          <span *ngIf="searchInput!=undefined && searchInput.length>0">
+          <app-search-result #searchResult></app-search-result>
+        </span>
+        </div>
+       </ng-template>
+    </mat-tab>
+</mat-tab-group>
+</div>
+</div>

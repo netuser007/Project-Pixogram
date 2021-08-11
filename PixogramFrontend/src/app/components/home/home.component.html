@@ -1,0 +1,133 @@
+<div class="home-container" >
+
+  <app-homebar></app-homebar>
+  <div style="height:100%;background-color: #E8E8E8">
+
+  <div class="home__body">
+
+    <div class="home__body__sidebarLeft">
+    </div>
+
+    <div class="home__body__contentMiddle">
+
+      <div class="home__body__contentMiddle__top">
+
+      </div>
+
+      <div class="home__body__contentMiddle__center" style="">
+        <mat-card class="post-message">
+          <mat-card-header class="post-message-header"
+                           style="padding-bottom: 20px; border-bottom: 1px solid lightgray;">
+            <img
+              alt=""
+              mat-card-avatar
+              [src]="profileImage">
+            <form #form="ngForm" (ngSubmit)="postMessage(form)">
+              <input class="on-your-mind" name="message" ngModel placeholder="What's on your mind?" type="text">
+              <span>{{titlePost}}</span>
+              <button style="display: none;" type="submit"></button>
+            </form>
+
+          </mat-card-header>
+          <mat-card-content class="card-body">
+            <div style="cursor: pointer;" (click)="addPhotos()">
+              <mat-icon color="primary">photo_album</mat-icon>
+              <span class="font_style">Photo/Video</span>
+            </div>
+
+            <div style="cursor: pointer;" [matMenuTriggerFor]="menu" (click)="addEmotions()">
+              <mat-icon color="warn">mood</mat-icon>
+              <span class="font_style">Feeling/Activity</span>
+            </div>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="updateTitle('Happy 🤗')">
+                Happy <span class="emojiIcon">🤗</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Surprised 😮')">
+                Surprised <span class="emojiIcon">😮</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Loving 🥰')">
+                Loving <span class="emojiIcon">🥰</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Angry 😡')">
+                Angry <span class="emojiIcon">😡</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Sick 🤧')">
+                Sick <span class="emojiIcon">🤧</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Afraid 🥺')">
+                Afraid <span class="emojiIcon">🥺</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Bored 😪')">
+                Bored <span class="emojiIcon">😪</span>
+              </button>
+              <button mat-menu-item (click)="updateTitle('Confident 😎')">
+                Confident <span class="emojiIcon">😎</span>
+              </button>
+            </mat-menu>
+          </mat-card-content>
+        </mat-card>
+
+        <!--Loop Through All Posts From Database and Display .slice().reverse()-->
+        <mat-card *ngFor="let p of posts" class="posts" style="border-radius: 10px;">
+          <mat-card-header>
+            <div style="display: flex;width: 100%;">
+              <span class="font_style" style="flex: 0.5;">{{ p?.singleMediaEntity.username }}</span>
+              <span class="font_style" style="flex: 0.5;">{{ p?.singleMediaEntity.title }}</span>
+              <span class="font_style" style="flex:0.3">{{p?.singleMediaEntity.timeStamp}}</span>
+            </div>
+           
+            
+            
+
+            
+          </mat-card-header>
+          <mat-card-content class="posts__body">
+            <span *ngIf="p.singleMediaEntity.postImage!=null && p.singleMediaEntity.postImage!=undefined">
+              <img
+              alt="avatar"
+              class="avatar" (dblclick)="likeUnlike()" style="width: 100%;" [src]="p?.singleMediaEntity.postImage">
+            </span>
+            
+              <p class="font_style">{{ p?.singleMediaEntity.description }}</p>
+              <p class="font_style">{{ p?.singleMediaEntity.tags }}</p>
+                <i *ngIf="likePresent(p)" class="fa fa-heart" style="color: red; font-size: 25px;" (click)="unlikePost(p)" aria-hidden="true"></i>
+                <i *ngIf="!likePresent(p)" class="fa fa-heart" style="color: #ccc; font-size: 25px;" (click)="likePost(p)" aria-hidden="true"></i>&nbsp;
+                <!-- <i *ngIf="isActiveBlack" class="fa fa-heart" style="color: black; font-size: 25px;transform: rotate(180deg);" (click)="likeUnlikeBlack()" aria-hidden="true"></i>
+                <i *ngIf="!isActiveBlack" class="fa fa-heart" style="color: #ccc; font-size: 25px;transform: rotate(180deg);" (click)="likeUnlikeBlack()" aria-hidden="true"></i>&nbsp; -->
+                <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 25px; margin-top: 10px;color:grey;" (click)="showCommentSection(p)"></i>
+                <h5 class="font_style">Liked by {{p.likesList.length}} people</h5>
+                <h5 class="font_style">Number of comments {{p.commentsList.length}}</h5>
+                <form *ngIf="p.showComments" #form="ngForm" (ngSubmit)="postComment(p,currentComment)">
+                  <input style="border-radius: 20px; width: 60%;margin-top: 5px; outline: none;" name="comment" [(ngModel)]="currentComment" placeholder="Give some comment" type="text">
+                  <button style="margin-left: 10px;border-radius: 20px;cursor: pointer;background-color: lightpink;" type="submit">Post</button>
+                  <div *ngFor="let data of p.commentsList.slice().reverse()">
+                    <div style="display: flex;">
+                      <span class="font_style"><strong>{{data.username}}</strong></span>&nbsp;
+                      <span class="font_style" style="flex:1">{{data.comment}}</span>
+                      <span class="font_style" style="flex: 0.45;">{{ data.timeStamp }}</span>
+                    </div>
+
+                    
+                  </div>
+                </form>
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>
+
+
+    </div>
+
+    <div class="home__body__feedRight">
+      <!-- <div class="inside">
+        <img alt="feed" src="assets/feed.jpg">
+      </div> -->
+
+
+    </div>
+
+  </div>
+  </div>
+</div>

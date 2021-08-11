@@ -1,0 +1,134 @@
+.tabGroup{
+    margin-top: 100px;
+}
+
+.row {
+  margin-top: 100px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 25%;
+  flex: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+
+  .followerTitle{
+      width: 100%;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: black;
+  }
+
+  .blockButton{
+      background-color: rgb(243, 75, 75);
+      height: 30px;
+      width: 100px;
+      border-radius: 20px;
+      cursor: pointer;
+      color:white;
+      font-family: 'Times New Roman', Times, serif;
+  }
+
+  .newsFeed{
+      margin-top: 10px;
+      margin-left: 10px;
+      background-color: #E8E8E8;
+      font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-size: 16px; 
+      color:rgb(82, 79, 79);
+      font-weight: 500;
+  }
+
+  .body {
+    margin-top: 20px;
+  
+    form {
+      display: flex;
+      width:100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .user_name {
+      display: flex;
+      align-items: center;
+      gap:10px;
+      width:100%;
+      input {
+        flex:1;
+        outline:none;
+        border:1px solid lightgray;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #F5F6F7;
+      }
+    }
+  
+    .email_password {
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+      margin-top: 10px;
+  
+      input {
+        flex: 1;
+        outline:none;
+        border:1px solid lightgray;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #F5F6F7;
+      }
+    }
+  
+    p {
+      font-size: 11px;
+      margin-top: 20px;
+      color: #777777;
+    }
+  
+    .submit-button {
+      padding: 10px 18px;
+      background-color: #00A400;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      width:200px;
+      align-self: center;
+      outline:none;
+      border:none;
+      border-radius: 10px;
+      color:white;
+      font-size: 16px;
+      letter-spacing: 1.1px;
+      cursor: pointer;
+    }
+  
+  
+  }
+
+
+  .button_field{
+    margin-left:10%; 
+    margin-top: 10px; 
+    width: 80%;
+    height: 50px;
+    outline: none;
+  }
+
+  .button_field_search{
+    margin-left:10%; 
+    margin-top: 10px; 
+    width: 80%;
+    height: 50px;
+    outline: none;
+  }

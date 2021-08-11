@@ -1,0 +1,42 @@
+<div style="display: flex; height: 100%; background-color: #E8E8E8;">
+    <div style="flex: 1;">
+        <h1 style="padding-left: 30%;">Tags</h1>
+
+        <div style="padding-left: 20%;"> 
+            <div *ngFor="let post of mediaArray">
+                <div style="width: 300px;">
+              <h5 style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">{{post.singleMediaEntity.title}}</h5>
+              <img alt="bg" height="250" style="width: 300px;"
+                [src]="post.singleMediaEntity.postImage">
+                <h5 style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">{{post.singleMediaEntity.description}}</h5>
+                <h5 style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">{{post.singleMediaEntity.tags}}</h5>
+                <i class="fa fa-heart pull-left" style="color:red; font-size: 25px;" aria-hidden="true"></i> &nbsp;{{post.likesList.length}}
+                <!-- <i class="fa fa-heart" style="color:black; font-size: 25px;transform: rotate(180deg);" aria-hidden="true"></i><br> -->
+                <mat-icon style="margin-left: 70%;"> comment <span></span></mat-icon>&nbsp;{{post.commentsList.length}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div style="flex: 1;">
+        <h1 style="padding-left: 30%;">Users</h1>
+        <div style="padding-left: 20%;"> 
+            <div *ngFor="let i of usersArray">
+            <div style="width: 300px;">
+              <h4 style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;margin-left: 6%;">{{ i.username }}</h4>
+              <img alt="bg" height="250" width="300"
+                [src]="i.profileImage">
+                <h5 class="pull-left" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">Followers: {{i.followers}}</h5>
+                <h5 class="pull-right" style="font-family: fa5-proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 16px; color:rgb(82, 79, 79);font-weight: 500;">Following: {{i.following}}</h5>
+                <div>
+            </div>
+            </div>
+            <br>
+            <br> 
+                
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,58 @@
+.tabGroup{
+    margin-top: 100px;
+}
+
+.row {
+    margin-top: 100px;
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+    -ms-flex: 25%; /* IE 10 */
+    flex: 25%;
+    padding: 0 4px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+
+  .followButton{
+      height: 30px;
+      border-radius: 20px;
+      cursor: pointer;
+      color:white;
+      margin-top: 2%;
+      font-family: sans-serif;
+      width: 100px;
+      background-color: #4267B2;
+  }
+
+// .followButton{
+//     margin-top: 500px;
+// }
+
+  .followerTitle{
+      width: 100%;
+      align-self: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: black;
+  }
+
+  .blockButton{
+      height: 30px;
+      width: 50%;
+      background-color:#35729b;
+      border-radius: 20px;
+      cursor: pointer;
+      color:white;
+      font-family: 'Times New Roman', Times, serif;
+  }
